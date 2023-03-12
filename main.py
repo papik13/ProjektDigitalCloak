@@ -5,7 +5,7 @@ root = tk.Tk()
 root.geometry("300x200")  # set the size of the window
 root.title("My Window")  # set the title of the window
 
-clock_label = tk.Label(root, font=('arial', 20, 'bold'), bg='white')
+clock_label = tk.Label(root, font=('LCD-Mono', 300, 'bold'),fg="white", bg='black')
 clock_label.pack(fill='both', expand=True)
 
 def update_clock():
@@ -15,4 +15,3 @@ def update_clock():
 
 update_clock()  # start the clock update loop
 root.mainloop()  # start the event loop
-p
