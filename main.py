@@ -1,9 +1,18 @@
+import tkinter as tk
 import datetime
-import time
 
-### CODE  ###
+root = tk.Tk()
+root.geometry("300x200")  # set the size of the window
+root.title("My Window")  # set the title of the window
 
-while True:
+clock_label = tk.Label(root, font=('arial', 20, 'bold'), bg='white')
+clock_label.pack(fill='both', expand=True)
+
+def update_clock():
     now = datetime.datetime.now()
-    print(now.strftime("%H:%M:%S"), end="\r")
-    time.sleep(1)
+    clock_label.config(text=now.strftime("%H:%M:%S"))
+    root.after(1000, update_clock)  # call update_clock() after 1000ms (1 second)
+
+update_clock()  # start the clock update loop
+root.mainloop()  # start the event loop
+p
